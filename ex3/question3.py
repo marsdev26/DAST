@@ -6,7 +6,7 @@ def binary_conv(n):
     counter2 = 0
 
     while p1 <= n:
-        p1 *=2
+        p1 *= 2
         counter1 += 1
 
     len_bin = counter1
@@ -16,11 +16,12 @@ def binary_conv(n):
     while n > 0:
         p2 *= 2
         counter2 += 1
-        if (p2*2) == p1 or p2 == p1:
-            if n<2:
-                counter2-=1
-            lst[counter1-counter2] = 1
+        if (p2 * 2) > n:
+            if n == 1:
+                lst[-1] = 1
+                break
+            lst[counter1 - counter2] = 1
             p1 = p2
             p2 = 1
-            n = n-p1
-            counter2= 0
+            n = n - p1
+            counter2 = 0
